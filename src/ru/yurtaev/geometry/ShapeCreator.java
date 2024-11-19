@@ -5,6 +5,10 @@ import java.util.Scanner;
 // Абстрактный базовый класс для всех фигур
 abstract class AbstractShape {
     public abstract double getArea();
+
+    public String toString() {
+        return null;
+    }
 }
 
 // Класс для работы с фигурами
@@ -76,9 +80,6 @@ public class ShapeCreator {
             try {
                 System.out.print(prompt);
                 value = scanner.nextDouble();
-                if (value <= 0) {
-                    throw new InvalidShapeInputException("Значение должно быть положительным числом.");
-                }
                 break;
             } catch (Exception e) {
                 System.out.println("Неверный ввод. Пожалуйста, введите корректное число.");

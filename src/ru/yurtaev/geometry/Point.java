@@ -60,6 +60,16 @@ public class Point implements Cloneable {
         return points;  // Возвращаем список созданных точек
     }
 
+    // Метод для удаления точки из списка
+    public static List<Point> removePoint(List<Point> points, int indexToRemove) {
+        if (indexToRemove >= 0 && indexToRemove < points.size()) {
+            points.remove(indexToRemove);
+        } else {
+            System.out.println("Ошибка: Неверный индекс для удаления.");
+        }
+        return points;
+    }
+
     // Переопределенный метод clone() для клонирования объекта ru.yurtaev.geometry.Point
     @Override
     public Point clone() {

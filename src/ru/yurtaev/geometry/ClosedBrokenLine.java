@@ -68,6 +68,10 @@ public class ClosedBrokenLine extends BrokenLine {
 
     @Override
     public void addPoints(Point[] newPoints) {
+        List<Point> points = getPoints();
+        if (!points.isEmpty()){
+        Point.removePoint(points, points.size() - 1);
+        }
         super.addPoints(newPoints);
         ensureClosed(); // После добавления новых точек проверяем замыкание
     }

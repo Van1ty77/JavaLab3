@@ -39,7 +39,7 @@ class Node {
                 replaceWith(null);
             } else if (left != null && right == null) {
                 replaceWith(left);
-            } else if (left == null && right != null) {
+            } else if (left == null) {
                 replaceWith(right);
             } else {
                 Node successor = right.findMin();
