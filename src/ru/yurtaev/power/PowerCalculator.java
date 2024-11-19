@@ -1,5 +1,7 @@
 package ru.yurtaev.power;
 
+import java.util.Scanner;
+
 public class PowerCalculator {
 
     public static double power(String xStr, String yStr) {
@@ -9,20 +11,25 @@ public class PowerCalculator {
             return Math.pow(x, y);
         } catch (NumberFormatException e) {
             System.err.println("Ошибка: Введены некорректные числа.");
-            return Double.NaN; // Возвращаем NaN при ошибке преобразования
+            return Double.NaN;
         }
     }
 
     public static void run(String[] args) {
-        if (args.length != 2) {
-            System.err.println("Ошибка: Необходимо указать два аргумента (основание и показатель степени).");
-            return;
-        }
+        Scanner scanner = new Scanner(System.in);
 
-        double result = power(args[0], args[1]);
+        System.out.print("Введите основание степени: ");
+        String x = scanner.nextLine();
+
+        System.out.print("Введите показатель степени: ");
+        String y = scanner.nextLine();
+
+        double result = power(x, y);
 
         if (!Double.isNaN(result)) {
-            System.out.println(args[0] + " в степени " + args[1] + " = " + result);
+            System.out.println(x + " в степени " + y + " = " + result);
         }
+
+        scanner.close();
     }
 }

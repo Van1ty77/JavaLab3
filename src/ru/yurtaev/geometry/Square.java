@@ -110,6 +110,9 @@ public class Square extends AbstractShape {
         double shiftX = getValidDouble(scanner, "Введите смещение по X: ");
         double shiftY = getValidDouble(scanner, "Введите смещение по Y: ");
         brokenLine.shiftPoint(brokenLine.getPoints().size() - 1, shiftX, shiftY);
+        brokenLine.shiftPoint(brokenLine.getPoints().size() - 2, shiftX, shiftY);
+        brokenLine.shiftPoint(brokenLine.getPoints().size() - 3, shiftX, shiftY);
+        brokenLine.shiftPoint(brokenLine.getPoints().size() - 4, shiftX, shiftY);
 
         System.out.println("Обновлённая ломаная линия: " + brokenLine);
         System.out.println("Обновлённая длина ломаной линии: " + brokenLine.getLength());
