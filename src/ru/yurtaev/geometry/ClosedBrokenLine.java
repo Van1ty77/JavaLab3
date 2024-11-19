@@ -49,9 +49,9 @@ public class ClosedBrokenLine extends BrokenLine {
         }
     }
 
-    private static int getValidInteger(Scanner scanner, String prompt, int min, int max) {
+    private static int getValidInteger(Scanner scanner, int min, int max) {
         while (true) {
-            System.out.print(prompt);
+            System.out.print("Введите номер действия: ");
             try {
                 int value = scanner.nextInt();
                 if (value >= min && value <= max) {
@@ -84,7 +84,7 @@ public class ClosedBrokenLine extends BrokenLine {
             System.out.println("3. Посчитать длину замкнутой ломаной");
             System.out.println("4. Выйти");
 
-            int choice = getValidInteger(scanner, "Введите номер действия: ", 1, 4);
+            int choice = getValidInteger(scanner, 1, 4);
 
             switch (choice) {
                 case 1 -> {
