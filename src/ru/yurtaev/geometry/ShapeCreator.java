@@ -2,93 +2,9 @@ package ru.yurtaev.geometry;
 
 import java.util.Scanner;
 
-// Создаем исключение для некорректного ввода
-class InvalidShapeInputException extends RuntimeException {
-    public InvalidShapeInputException(String message) {
-        super(message);
-    }
-}
-
 // Абстрактный базовый класс для всех фигур
 abstract class AbstractShape {
     public abstract double getArea();
-}
-
-// Класс для круга
-class Circle extends AbstractShape {
-    private final Point center;
-    private final double radius;
-
-    public Circle(Point center, double radius) {
-        if (radius <= 0) {
-            throw new InvalidShapeInputException("Радиус круга должен быть положительным числом.");
-        }
-        this.center = center;
-        this.radius = radius;
-    }
-
-    @Override
-    public double getArea() {
-        return Math.PI * radius * radius;
-    }
-
-    @Override
-    public String toString() {
-        return "Круг с центром в точке " + center + " и радиусом " + radius;
-    }
-}
-
-// Класс для прямоугольника
-class Rectangle extends AbstractShape {
-    private final Point topLeft;
-    private final double width;
-    private final double height;
-
-    public Rectangle(Point topLeft, double width, double height) {
-        if (width <= 0 || height <= 0) {
-            throw new InvalidShapeInputException("Ширина и высота прямоугольника должны быть положительными числами.");
-        }
-        this.topLeft = topLeft;
-        this.width = width;
-        this.height = height;
-    }
-
-    @Override
-    public double getArea() {
-        return width * height;
-    }
-
-    @Override
-    public String toString() {
-        return "Прямоугольник с верхним левым углом в точке " + topLeft + " и размерами: ширина = " + width + ", высота = " + height;
-    }
-}
-
-// Класс для треугольника
-class Triangle extends AbstractShape {
-    private final Point p1;
-    private final Point p2;
-    private final Point p3;
-
-    public Triangle(Point p1, Point p2, Point p3) {
-        this.p1 = p1;
-        this.p2 = p2;
-        this.p3 = p3;
-    }
-
-    @Override
-    public double getArea() {
-        double a = p1.distanceTo(p2);
-        double b = p2.distanceTo(p3);
-        double c = p3.distanceTo(p1);
-        double s = (a + b + c) / 2;
-        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
-    }
-
-    @Override
-    public String toString() {
-        return "Треугольник с вершинами в точках " + p1 + ", " + p2 + " и " + p3;
-    }
 }
 
 // Класс для работы с фигурами

@@ -28,7 +28,7 @@ public class BinaryTree {
         }
     }
 
-    public static void main(String[] args) {
+    public static void run2(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Node root = new Node();
 

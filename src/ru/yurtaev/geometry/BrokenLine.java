@@ -83,7 +83,7 @@ public class BrokenLine implements LengthMeasurable {
     }
 
     // Метод для получения корректного целого числа от пользователя
-    private static int getValidInteger(Scanner scanner) {
+    public static int getValidInteger(Scanner scanner) {
         int number;
         while (true) {
             String input = scanner.nextLine();
@@ -131,7 +131,7 @@ public class BrokenLine implements LengthMeasurable {
     }
 
     // Основной метод для работы программы
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Point> allPoints = new ArrayList<>();  // Список всех точек
         List<LengthMeasurable> allLines = new ArrayList<>();    // Список всех ломаных линий

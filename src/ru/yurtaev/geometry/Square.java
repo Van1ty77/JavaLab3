@@ -78,7 +78,7 @@ public class Square extends AbstractShape {
     }
 
     // Основной метод для обработки логики
-    public static void main(String[] args) {
+    public static void run1(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Создание квадрата:");

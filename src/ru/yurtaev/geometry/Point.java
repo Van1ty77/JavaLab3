@@ -72,7 +72,7 @@ public class Point implements Cloneable {
     }
 
     // Метод для работы с пользовательским вводом
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         // Ввод координат для нескольких точек
